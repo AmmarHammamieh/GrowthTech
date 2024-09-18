@@ -1,13 +1,111 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html{
+    font-size: 16px;
+}
+@media screen and (max-width:1900px) {
+    html{
+        font-size: 12px;
+    }  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+    font-family: "poppins-Light";
+    src: url("./assets/fonts/poppins/Poppins-Light.ttf");
+}
+@font-face {
+    font-family: "poppins-Bold";
+    src: url("./assets/fonts/poppins/Poppins-Bold.ttf");
+}
+@font-face {
+    font-family: "poppins-Regular";
+    src: url("./assets/fonts/poppins/Poppins-Regular.ttf");
+}
+body{
+    @apply font-poppins-Light
+}
+header{
+    @apply px-5 py-4 flex justify-between
+}
+header .logo{
+    @apply w-[7.5rem] h-[1.875rem]
+}
+.nav-item{
+    @apply text-lg
+}
+footer{
+    @apply bg-black text-white
+}
+footer .logo{
+    @apply w-[13.375rem] h-[3.125rem]
+}
+footer .logo.white{
+    filter: invert(0.5) sepia(0%) saturate(810%) hue-rotate(25deg) brightness(2) contrast(100%);
+}
+footer .title{
+    @apply text-2xl mb-5
+}
+.copyright{
+    @apply text-lg text-[#A4A4A5]
+}
+.footer-note{
+    @apply text-sm w-full md:w-3/4 text-[#A4A4A5]
+}
+.product-title{
+    @apply text-4xl font-poppins-Bold text-center xl:text-start
+}
+.package{
+    @apply py-4 px-5 border border-red-300 mt-5
+}
+.package-title{
+    @apply text-2xl font-poppins-Bold
+}
+.tag{
+    @apply px-10 text-white rounded-3xl  py-1 bg-gradient-to-r from-[#A34D9F] to-[#275FD0] w-fit
+}
+.feature{
+    @apply text-lg text-[#3F3631] flex gap-5
+}
+.after-offer{
+    position: relative;
+}
+.after-offer::after{
+    content: "";
+    height: 2px;
+    width: 94%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: red;
+    position: absolute;
+    top: 0;
+    rotate: -18deg;
+}
+.gradiant-purble{
+    background: -webkit-linear-gradient(90deg, #2E034B 0%, #002182 50%, #2E034B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradiant-red{
+    background: -webkit-linear-gradient(90deg, #FF225E 0%, #9D2AC6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gradiant-cyan{
+    background: -webkit-linear-gradient(90deg, #8BF2B5 0%, #35C8EB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gradiant-pink{
+    background: -webkit-linear-gradient(90deg, #E280DA 0%, #6694EF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gradiant-pink-purble{
+    background: -webkit-linear-gradient(90deg, #A34D9F 0%, #275FD0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
